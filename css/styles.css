@@ -1,33 +1,49 @@
-.parent {
-  width: 400px;
-  height: 400px;
-  background-color: blue;
-  cursor: pointer;
+body {
+  text-align: center;
 }
 
-.child {
-  width: 150px;
-  height: 150px;
+h1 {
+  margin: 20px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
   background-color: red;
-  transition: all 1s cubic-bezier(0.6, 0.62, 0.26, 1.49);
+  animation-name: box;
+  animation-duration: 6s;
+  position: absolute;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-.outer {
-  display: grid;
-  place-items: center;
-}
-
-.outer .parent:hover .child {
-  transform: translateX(165%);
-  animation: noun 2s;
-}
-
-@keyframes noun {
+@keyframes box {
   0% {
-    transform: translate(0%);
+    background-color: red;
+    left: 10px;
+    top: 75px;
   }
-
+  25% {
+    background-color: orange;
+    left: 600px;
+    top: 75px;
+    border-top-left-radius: 50%;
+  }
   50% {
-    transform: translateY(165%);
+    background: yellow;
+    left: 600px;
+    top: 400px;
+    border-top-right-radius: 50%;
+  }
+  75% {
+    background-color: green;
+    left: 10px;
+    top: 400px;
+    border-bottom-right-radius: 50%;
+  }
+  100% {
+    background-color: red;
+    left: 10px;
+    top: 75px;
   }
 }
